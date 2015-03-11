@@ -8,8 +8,9 @@
 
 ## Limitation
 * No support Windows
-* Only a user who have administrative rights is able to use hosts changer because you need to link at /etc/hosts. see hosts_changer.py  
-ex) ln -s ~parkjy76/hosts /etc/hosts
+* Only a user who have administrative rights is able to use hosts changer because you need to link at /etc/hosts.  
+and hosts changer link selected hosts file to ~[USER]/hosts. see hosts_changer.py  
+ex) ln -s ~[USER]/hosts /etc/hosts
 
 ## Requirements
 * Python 3.X
