@@ -51,9 +51,12 @@ class HostsChanger():
 
     def getHostsList(self):
         path = self.getHostsDir()
-        for item in os.listdir(path):
-            if os.path.isdir(os.path.join(path, item)): continue
-            yield item
+        try:
+            for item in os.listdir(path):
+                if os.path.isdir(os.path.join(path, item)): continue
+                yield item
+        except:
+            pass
 
     def readLink(self):
         if not self._existsLink(): return ''
