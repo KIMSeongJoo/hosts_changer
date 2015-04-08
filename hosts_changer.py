@@ -11,6 +11,7 @@ from ui import main
 from ui.settings import path
 
 # global variables
+APP_BASE_DIR = os.path.dirname(os.path.realpath(__file__))
 CONFIG_FILE='hosts_changer.cfg'
 USER_HOME_DIR = os.path.expanduser('~')
 HOSTS_FILE = 'hosts'
@@ -28,10 +29,10 @@ class HostsChanger():
 
     def loadConfig(self):
         self.config = ConfigParser.SafeConfigParser(allow_no_value=True)
-        return self.config.read(CONFIG_FILE)
+        return self.config.read(os.path.join(APP_BASE_DIR, CONFIG_FILE))
 
     def writeConfig(self):
-        with open(CONFIG_FILE, 'w') as configfile:
+        with open(os.path.join(APP_BASE_DIR, CONFIG_FILE), 'w') as configfile:
             return self.config.write(configfile)
 
     def getHostsDir(self):
