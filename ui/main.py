@@ -7,6 +7,7 @@
 #
 # WARNING! All changes made in this file will be lost!
 
+import os, sys
 #from PySide import QtCore, QtGui
 from PyQt4 import QtCore, QtGui
 
@@ -22,7 +23,7 @@ class Ui_MainWindow(object):
         MainWindow.setMinimumSize(QtCore.QSize(342, 323))
         MainWindow.setMaximumSize(QtCore.QSize(342, 323))
         icon = QtGui.QIcon()
-        icon.addPixmap(QtGui.QPixmap("icons/wow_rogue.png"), QtGui.QIcon.Normal, QtGui.QIcon.Off)
+        icon.addPixmap(QtGui.QPixmap(os.path.join(sys.path[0], "icons/wow_rogue.png")), QtGui.QIcon.Normal, QtGui.QIcon.Off)
         MainWindow.setWindowIcon(icon)
         self.centralwidget = QtGui.QWidget(MainWindow)
         self.centralwidget.setObjectName("centralwidget")
@@ -52,7 +53,7 @@ class Ui_MainWindow(object):
         self.refreshListButton.setGeometry(QtCore.QRect(10, 260, 31, 31))
         self.refreshListButton.setText("")
         icon1 = QtGui.QIcon()
-        icon1.addPixmap(QtGui.QPixmap("icons/refresh.png"), QtGui.QIcon.Normal, QtGui.QIcon.Off)
+        icon1.addPixmap(QtGui.QPixmap(os.path.join(sys.path[0], "icons/refresh.png")), QtGui.QIcon.Normal, QtGui.QIcon.Off)
         self.refreshListButton.setIcon(icon1)
         self.refreshListButton.setIconSize(QtCore.QSize(36, 36))
         self.refreshListButton.setObjectName("refreshListButton")
@@ -69,13 +70,13 @@ class Ui_MainWindow(object):
         MainWindow.setMenuBar(self.menubar)
         self.actionQuit = QtGui.QAction(MainWindow)
         icon2 = QtGui.QIcon()
-        icon2.addPixmap(QtGui.QPixmap("icons/application-exit.png"), QtGui.QIcon.Normal, QtGui.QIcon.Off)
+        icon2.addPixmap(QtGui.QPixmap(os.path.join(sys.path[0], "icons/application-exit.png")), QtGui.QIcon.Normal, QtGui.QIcon.Off)
         self.actionQuit.setIcon(icon2)
         self.actionQuit.setIconVisibleInMenu(True)
         self.actionQuit.setObjectName("actionQuit")
         self.actionPath = QtGui.QAction(MainWindow)
         icon3 = QtGui.QIcon()
-        icon3.addPixmap(QtGui.QPixmap("icons/configure.png"), QtGui.QIcon.Normal, QtGui.QIcon.Off)
+        icon3.addPixmap(QtGui.QPixmap(os.path.join(sys.path[0], "icons/configure.png")), QtGui.QIcon.Normal, QtGui.QIcon.Off)
         self.actionPath.setIcon(icon3)
         self.actionPath.setObjectName("actionPath")
         self.actionAbout_Hosts_Changer = QtGui.QAction(MainWindow)
